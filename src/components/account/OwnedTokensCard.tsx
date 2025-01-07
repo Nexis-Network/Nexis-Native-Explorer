@@ -1,5 +1,5 @@
 import React from "react";
-import { PublicKey } from "@nexis/web3";
+import { PublicKey } from "@nexis-ai/web3";
 import { FetchStatus } from "providers/cache";
 import {
   useFetchAccountOwnedTokens,

@@ -4,7 +4,7 @@ import {
   ParsedInstruction,
   SignatureResult,
   PublicKey,
-} from "@nexis/web3";
+} from "@nexis-ai/web3";
 import { Address } from "components/common/Address";
 import { create, Struct } from "superstruct";
 import { camelToTitleCase } from "utils";
@@ -67,7 +67,7 @@ export function BpfUpgradeableLoaderDetailsCard(props: DetailsProps) {
   }
 }
 
-function renderDetails<T>(
+function renderDetails<T extends Record<string, any>>(
   props: DetailsProps,
   parsed: ParsedInfo,
   struct: Struct<T>
@@ -75,7 +75,7 @@ function renderDetails<T>(
   const info = create(parsed.info, struct);
 
   const attributes: JSX.Element[] = [];
-  for (let [key, value] of Object.entries(info)) {
+  for (let [key, value] of Object.entries(info as Record<string, any>)) {
     if (value instanceof PublicKey) {
       value = <Address pubkey={value} alignRight link />;
     } else if (key === "bytes") {

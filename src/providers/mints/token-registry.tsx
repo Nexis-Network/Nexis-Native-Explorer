@@ -22,7 +22,7 @@ export function TokenRegistryProvider({ children }: ProviderProps) {
       const tokenList =
         cluster === Cluster.Custom
           ? []
-          : tokens.filterByClusterSlug(clusterSlug(cluster)).getList();
+          : tokens.filterByClusterSlug("mainnet-beta").getList();
 
       setTokenRegistry(
         tokenList.reduce((map: TokenInfoMap, item: TokenInfo) => {

@@ -12,8 +12,8 @@ import {
   TransactionSignature,
   SystemProgram,
   SystemInstruction,
-} from "@nexis/web3";
-import { SolBalance } from "utils";
+} from "@nexis-ai/web3";
+import { NztBalance } from "utils";
 import { ErrorCard } from "components/common/ErrorCard";
 import { LoadingCard } from "components/common/LoadingCard";
 import { TableCardBody } from "components/common/TableCardBody";
@@ -298,7 +298,7 @@ function StatusCard({
           <tr>
             <td>Fee (NZT)</td>
             <td className="text-lg-right">
-              <SolBalance lamports={fee} />
+              <NztBalance lamports={fee} />
             </td>
           </tr>
         )}
@@ -369,7 +369,7 @@ function AccountsCard({
           <BalanceDelta delta={delta} isSol />
         </td>
         <td>
-          <SolBalance lamports={post} />
+          <NztBalance lamports={post} />
         </td>
         <td>
           {index === 0 && (

@@ -1,11 +1,11 @@
 import React from "react";
-import { PublicKey } from "@nexis/web3";
+import { PublicKey } from "@nexis-ai/web3";
 import { useFetchRewards, useRewards } from "providers/accounts/rewards";
 import { LoadingCard } from "components/common/LoadingCard";
 import { FetchStatus } from "providers/cache";
 import { ErrorCard } from "components/common/ErrorCard";
 import { Slot } from "components/common/Slot";
-import { lamportsToSolString } from "utils";
+import { lamportsToNztString } from "utils";
 import { useAccountInfo } from "providers/accounts";
 import BN from "bn.js";
 
@@ -56,8 +56,8 @@ export function RewardsCard({ pubkey }: { pubkey: PublicKey }) {
         <td>
           <Slot slot={reward.effectiveSlot} link />
         </td>
-        <td>{lamportsToSolString(reward.amount)}</td>
-        <td>{lamportsToSolString(reward.postBalance)}</td>
+        <td>{lamportsToNztString(reward.amount)}</td>
+        <td>{lamportsToNztString(reward.postBalance)}</td>
       </tr>
     );
   });

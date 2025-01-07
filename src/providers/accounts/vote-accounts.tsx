@@ -1,4 +1,4 @@
-import { Connection, VoteAccountStatus } from "@nexis/web3";
+import { Connection, VoteAccountStatus } from "@nexis-ai/web3";
 import { Cluster, useCluster } from "providers/cluster";
 import React from "react";
 import { reportError } from "utils/sentry";

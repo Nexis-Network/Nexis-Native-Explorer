@@ -1,5 +1,5 @@
 import React from "react";
-import { TransactionInstruction } from "@nexis/web3";
+import { TransactionInstruction } from "@nexis-ai/web3";
 import { Address } from "components/common/Address";
 
 export function RawDetails({ ix }: { ix: TransactionInstruction }) {

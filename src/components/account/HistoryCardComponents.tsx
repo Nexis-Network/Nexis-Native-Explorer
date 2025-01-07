@@ -1,5 +1,5 @@
 import React from "react";
-import { ConfirmedSignatureInfo, TransactionError } from "@nexis/web3";
+import { ConfirmedSignatureInfo, TransactionError } from "@nexis-ai/web3";
 
 export type TransactionRow = {
   slot: number;

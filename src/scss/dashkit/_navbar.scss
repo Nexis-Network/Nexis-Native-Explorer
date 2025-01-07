@@ -11,9 +11,10 @@
 .navbar {
   border-width: 0 0 $border-width 0;
   border-style: solid;
+  color: #676767 important;
 }
 a.nav-link.url-link {
-  color: #43fabd !important;
+  color: #ffffff !important;
 }
 a.nav-link.url-link:hover {
   color: #fff !important;
@@ -23,7 +24,7 @@ a.nav-link.url-link:hover {
 // Navbar dark
 
 .navbar-dark {
-  background-color: $navbar-dark-bg;
+  background-color: rgba($navbar-dark-bg, 0.2);
   border-color: $navbar-dark-border-color;
 }
 
@@ -86,7 +87,7 @@ a.nav-link.url-link:hover {
 // Navbar vibrant
 
 .navbar-dark.navbar-vibrant {
-  background-image: linear-gradient(to bottom right, fade-out(#126FEB, .1), fade-out(#7203E1, .1)), url(#{$path-to-img}/covers/sidebar-cover.jpg);
+  background-image: linear-gradient(to bottom right, fade-out(#B4FF33, .1), fade-out(#B4FF33, .1)), url(#{$path-to-img}/covers/sidebar-cover.jpg);
   background-repeat: no-repeat, no-repeat;
   background-position: center center, center center;
   background-size: cover, cover;
@@ -179,8 +180,12 @@ a.nav-link.url-link:hover {
 // Navbar light
 
 .navbar-light {
-  background-color: $navbar-light-bg;
   border-color: $navbar-light-border-color;
+  width: 100% !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
 }
 
 .navbar-light .navbar-heading {
@@ -240,7 +245,7 @@ a.nav-link.url-link:hover {
     display: block;
     border-top-width: $border-width;
     border-top-style: solid;
-    margin: $navbar-padding-y (-$navbar-padding-x);
+    margin: 10px !important;
   }
 }
 
@@ -248,13 +253,13 @@ a.nav-link.url-link:hover {
 // Navbar navigaton
 
 .navbar-nav {
-  margin-left: -$navbar-padding-x;
-  margin-right: -$navbar-padding-x;
+  margin-left: 0px !important;
+  margin-right: 0px !important;
 }
 
 .navbar-nav .nav-link {
-  padding-left: $navbar-padding-x;
-  padding-right: $navbar-padding-x;
+  padding-left: 0px !important;
+  padding-right: 0px !important;
 
   &.active {
     position: relative;
@@ -265,7 +270,7 @@ a.nav-link.url-link:hover {
       left: 0;
       top: $nav-link-padding-y;
       bottom: $nav-link-padding-y;
-      border-left: 2px solid $primary;
+      border-bottom: 2px solid $primary;
     }
   }
 }
@@ -345,7 +350,7 @@ a.nav-link.url-link:hover {
 
           // Increase $nav-link-padding-y value to align the underline
           // with the bottom of the navbar
-          padding: .625rem $navbar-nav-link-padding-x;
+          padding: .53125rem $navbar-nav-link-padding-x;
 
           &.active {
             position: relative;

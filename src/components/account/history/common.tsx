@@ -1,4 +1,4 @@
-import { ParsedConfirmedTransaction } from "@nexis/web3";
+import { ParsedConfirmedTransaction } from "@nexis-ai/web3";
 
 export type MintDetails = {
   decimals: number;

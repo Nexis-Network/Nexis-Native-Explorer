@@ -1,5 +1,5 @@
 import React from "react";
-import { ParsedInstruction } from "@nexis/web3";
+import { ParsedInstruction } from "@nexis-ai/web3";
 
 export function RawParsedDetails({
   ix,

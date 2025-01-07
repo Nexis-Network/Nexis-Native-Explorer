@@ -4,7 +4,7 @@ import {
   TransactionSignature,
   Transaction,
   Message,
-} from "@nexis/web3";
+} from "@nexis-ai/web3";
 import { useCluster, Cluster } from "../cluster";
 import * as Cache from "providers/cache";
 import { ActionType, FetchStatus } from "providers/cache";

@@ -1,11 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { Location } from "history";
-import { AccountBalancePair } from "@nexis/web3";
+import { AccountBalancePair } from "@nexis-ai/web3";
 import { useRichList, useFetchRichList, Status } from "providers/richList";
 import { LoadingCard } from "./common/LoadingCard";
 import { ErrorCard } from "./common/ErrorCard";
-import { SolBalance } from "utils";
+import { NztBalance } from "utils";
 import { useQuery } from "utils/url";
 import { useSupply } from "providers/supply";
 import { Address } from "./common/Address";
@@ -86,7 +86,7 @@ export function TopAccountsCard() {
         {richList === Status.Idle && (
           <div className="card-body">
             <span
-              className="btn btn-white ml-3 d-none d-md-inline"
+              className="btn btn-white ml-3 d-none d-md-inline bg-transparent border border-none"
               onClick={fetchRichList}
             >
               Load Largest Accounts
@@ -134,7 +134,7 @@ const renderAccountRow = (
         <Address pubkey={account.address} link />
       </td>
       <td className="text-right">
-        <SolBalance lamports={account.lamports} maximumFractionDigits={0} />
+        <NztBalance lamports={account.lamports} maximumFractionDigits={0} />
       </td>
       <td className="text-right">{`${(
         (100 * account.lamports) /

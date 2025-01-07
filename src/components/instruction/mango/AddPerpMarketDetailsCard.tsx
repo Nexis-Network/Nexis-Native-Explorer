@@ -1,4 +1,4 @@
-import { SignatureResult, TransactionInstruction } from "@nexis/web3";
+import { SignatureResult, TransactionInstruction } from "@nexis-ai/web3";
 import moment from "moment";
 import { InstructionCard } from "../InstructionCard";
 import { AddPerpMarket } from "./types";

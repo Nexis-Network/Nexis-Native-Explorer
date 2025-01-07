@@ -1,4 +1,4 @@
-import { SignatureResult, TransactionInstruction } from "@nexis/web3";
+import { SignatureResult, TransactionInstruction } from "@nexis-ai/web3";
 import moment from "moment";
 import { useCluster } from "providers/cluster";
 import { useEffect, useState } from "react";

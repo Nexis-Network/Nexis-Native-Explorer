@@ -8,7 +8,7 @@ import {
   PublicKey,
   SignatureResult,
   TransactionSignature,
-} from "@nexis/web3";
+} from "@nexis-ai/web3";
 import { BpfLoaderDetailsCard } from "components/instruction/bpf-loader/BpfLoaderDetailsCard";
 import { MemoDetailsCard } from "components/instruction/MemoDetailsCard";
 import { SerumDetailsCard } from "components/instruction/SerumDetailsCard";

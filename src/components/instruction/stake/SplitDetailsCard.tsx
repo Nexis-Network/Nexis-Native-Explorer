@@ -3,8 +3,8 @@ import {
   SignatureResult,
   StakeProgram,
   ParsedInstruction,
-} from "@nexis/web3";
-import { SolBalance } from "utils";
+} from "@nexis-ai/web3";
+import { NztBalance } from "utils";
 import { InstructionCard } from "../InstructionCard";
 import { Address } from "components/common/Address";
 import { SplitInfo } from "./types";
@@ -59,7 +59,7 @@ export function SplitDetailsCard(props: {
       <tr>
         <td>Split Amount (NZT)</td>
         <td className="text-lg-right">
-          <SolBalance lamports={info.lamports} />
+          <NztBalance lamports={info.lamports} />
         </td>
       </tr>
     </InstructionCard>

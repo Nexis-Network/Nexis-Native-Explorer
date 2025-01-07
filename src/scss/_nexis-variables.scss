@@ -1,5 +1,5 @@
 //
-// solana-variables.scss
+// nexis-variables.scss
 // Use this to overwrite Bootstrap and Dashkit variables
 //
 
@@ -28,16 +28,16 @@ $black: #232323;
 $rainbow-1: #fa62fc;
 $rainbow-2: #be84e8;
 $rainbow-3: #79abd2;
-$rainbow-4: #38d0bd;
-$rainbow-5: #1dd79b;
+$rainbow-4: #DAFF75;
+$rainbow-5: #DAFF75;
 
-$primary: #42ba96 !default;
-$primary-dark: #33a382 !default;
-$success: #19be56 !default;
+$primary: #DAFF75!default;
+$primary-dark: #DAFF75 !default;
+$success: #DAFF75 !default;
 $secondary: $gray-700;
 $danger: #b45be1;
 $warning: #d83aeb !default;
-$info: #43b5c5 !default;
+$info: #DAFF75 !default;
 $light: $gray-100;
 $dark: $gray-900;
 
@@ -59,21 +59,21 @@ $font-family-base: "Rubik";
 }
 
 .text-rainbow {
-  background: linear-gradient(0.3turn, #e400ff, #00ffbd);
+  background: linear-gradient(0.3turn, #B4FF33, #00ffbd);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 .bg-rainbow {
-  background: linear-gradient(0.3turn, #e400ff, #00ffbd);
+  background: linear-gradient(0.3turn, #B4FF33, #00ffbd);
 }
 
 .bg-rainbow-1 {
-  background: #fa62fc;
+  background: #B4FF33;
 }
 .bg-rainbow-2 {
-  background: #be84e8;
+  background: #B4FF33;
 }
 .bg-rainbow-3 {
   background: #79abd2;
@@ -86,17 +86,17 @@ $font-family-base: "Rubik";
 }
 
 .text-rainbow-1 {
-  color: #fa62fc;
+  color: #B4FF33;
 }
 .text-rainbow-2 {
-  color: #be84e8;
+  color: #B4FF33;
 }
 .text-rainbow-3 {
-  color: #79abd2;
+  color: #B4FF33;
 }
 .text-rainbow-4 {
-  color: #38d0bd;
+  color: #B4FF33;
 }
 .text-rainbow-5 {
-  color: #1dd79b;
+  color: #B4FF33;
 }

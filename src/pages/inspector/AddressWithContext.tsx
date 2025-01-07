@@ -1,5 +1,5 @@
 import React from "react";
-import { PublicKey, SystemProgram } from "@nexis/web3";
+import { PublicKey, SystemProgram } from "@nexis-ai/web3";
 import { Address } from "components/common/Address";
 import {
   Account,
@@ -8,7 +8,7 @@ import {
 } from "providers/accounts";
 import { ClusterStatus, useCluster } from "providers/cluster";
 import { addressLabel } from "utils/tx";
-import { lamportsToSolString } from "utils";
+import { lamportsToNztString } from "utils";
 
 type AccountValidator = (account: Account) => string | undefined;
 
@@ -94,7 +94,7 @@ function AccountInfo({
       {ownerAddress
         ? `Owned by ${
             ownerLabel || ownerAddress
-          }. Balance is ${lamportsToSolString(info.data.lamports)} NZT`
+          }. Balance is ${lamportsToNztString(info.data.lamports)} NZT`
         : "Account doesn't exist"}
     </span>
   );

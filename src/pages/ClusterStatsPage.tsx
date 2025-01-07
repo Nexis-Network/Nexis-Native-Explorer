@@ -6,13 +6,13 @@ import {
   useDashboardInfo,
   usePerformanceInfo,
   useStatsProvider,
-} from "providers/stats/solanaClusterStats";
-import { lamportsToSol, slotsToHumanString } from "utils";
+} from "providers/stats/nexisClusterStats";
+import { lamportsToNzt, lamportsToNztString, slotsToHumanString } from "utils";
 import { ClusterStatus, useCluster } from "providers/cluster";
 import { TpsCard } from "components/TpsCard";
 import { displayTimestampWithoutDate, displayTimestampUtc } from "utils/date";
 import { Status, useFetchSupply, useSupply } from "providers/supply";
-import { PublicKey } from "@nexis/web3";
+import { PublicKey } from "@nexis-ai/web3";
 import { ErrorCard } from "components/common/ErrorCard";
 import { LoadingCard } from "components/common/LoadingCard";
 import { useAccountInfo, useFetchAccountInfo } from "providers/accounts";
@@ -57,7 +57,7 @@ function StakingComponent() {
   const fetchSupply = useFetchSupply();
   const fetchAccount = useFetchAccountInfo();
   const stakeInfo = useAccountInfo(STAKE_HISTORY_ACCOUNT);
-  const coinInfo = useCoinGecko("velas");
+  const coinInfo = useCoinGecko("nexis");
   const { fetchVoteAccounts, voteAccounts } = useVoteAccounts();
 
   function fetchData() {
@@ -278,9 +278,9 @@ function StakingComponent() {
               <>
                 <h4>Price</h4>
                 <h1>
-                  <em>$--.--</em>
+                  <em>$0.02</em>
                 </h1>
-                <h5>Error fetching the latest price information</h5>
+                <h5>Default price</h5>
               </>
             )}
             {solanaInfo && (
@@ -305,7 +305,7 @@ const abbreviatedNumber = (value: number, fixed = 1) => {
 };
 
 function displayLamports(value: number) {
-  return abbreviatedNumber(lamportsToSol(value));
+  return abbreviatedNumber(lamportsToNzt(value));
 }
 
 function StatsCardBody() {
@@ -416,10 +416,10 @@ export function StatsNotReady({ error }: { error: boolean }) {
 
   if (error || !active) {
     return (
-      <div className="card-body text-center">
+      <div className="card-body text-center text-md w-full h-full">
         There was a problem loading cluster stats.{" "}
         <button
-          className="btn btn-white btn-sm"
+          className="btn bg-transparent btn-sm"
           onClick={() => {
             retry();
           }}
@@ -474,11 +474,13 @@ type CoinGeckoResult = {
 
 function useCoinGecko(coinId: string): CoinGeckoResult | undefined {
   const [coinInfo, setCoinInfo] = React.useState<CoinGeckoResult>();
+  const DEFAULT_PRICE = 0.02;
+  const TOTAL_SUPPLY = 1000000000; // 1 Billion NZT
 
   React.useEffect(() => {
     const getCoinInfo = () => {
       CoinGeckoClient.coins
-        .fetch("velas")
+        .fetch("nexis")
         .then((info: CoinInfoResult) => {
           setCoinInfo({
             coinInfo: {
@@ -494,7 +496,16 @@ function useCoinGecko(coinId: string): CoinGeckoResult | undefined {
           });
         })
         .catch((error: any) => {
+          // Set default values when CoinGecko data is not available
           setCoinInfo({
+            coinInfo: {
+              price: DEFAULT_PRICE,
+              volume_24: 0,
+              market_cap: DEFAULT_PRICE * TOTAL_SUPPLY,
+              market_cap_rank: 0,
+              price_change_percentage_24h: 0,
+              last_updated: new Date(),
+            },
             status: CoingeckoStatus.FetchFailed,
           });
         });

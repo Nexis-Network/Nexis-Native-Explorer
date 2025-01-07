@@ -1,5 +1,5 @@
 import React from "react";
-import { BlockResponse } from "@nexis/web3";
+import { BlockResponse } from "@nexis-ai/web3";
 import { ErrorCard } from "components/common/ErrorCard";
 import { Signature } from "components/common/Signature";
 

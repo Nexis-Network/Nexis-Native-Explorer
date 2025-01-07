@@ -1,6 +1,6 @@
 import React from "react";
 import { Account } from "providers/accounts";
-import { SolBalance } from "utils";
+import { NztBalance } from "utils";
 import { TableCardBody } from "components/common/TableCardBody";
 import { Address } from "components/common/Address";
 import { addressLabel } from "utils/tx";
@@ -36,7 +36,7 @@ export function UnknownAccountCard({ account }: { account: Account }) {
         <tr>
           <td>Balance (NZT)</td>
           <td className="text-lg-right">
-            <SolBalance lamports={lamports} />
+            <NztBalance lamports={lamports} />
           </td>
         </tr>
 

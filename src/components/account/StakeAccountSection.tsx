@@ -1,6 +1,6 @@
 import React from "react";
 import { TableCardBody } from "components/common/TableCardBody";
-import { SolBalance } from "utils";
+import { NztBalance } from "utils";
 import { displayTimestampUtc } from "utils/date";
 import { Account, useFetchAccountInfo } from "providers/accounts";
 import { Address } from "components/common/Address";
@@ -10,7 +10,7 @@ import {
   StakeAccountType,
 } from "validators/accounts/stake";
 import BN from "bn.js";
-import { StakeActivationData } from "@nexis/web3";
+import { StakeActivationData } from "@nexis-ai/web3";
 
 const MAX_EPOCH = new BN(2).pow(new BN(64)).sub(new BN(1));
 
@@ -125,13 +125,13 @@ function OverviewCard({
         <tr>
           <td>Balance (NZT)</td>
           <td className="text-lg-right text-uppercase">
-            <SolBalance lamports={account.lamports || 0} />
+            <NztBalance lamports={account.lamports || 0} />
           </td>
         </tr>
         <tr>
           <td>Rent Reserve (NZT)</td>
           <td className="text-lg-right">
-            <SolBalance lamports={stakeAccount.meta.rentExemptReserve} />
+            <NztBalance lamports={stakeAccount.meta.rentExemptReserve} />
           </td>
         </tr>
         {hideDelegation && (
@@ -190,7 +190,7 @@ function DelegationCard({
             <tr>
               <td>Delegated Stake (NZT)</td>
               <td className="text-lg-right">
-                <SolBalance lamports={stake.delegation.stake} />
+                <NztBalance lamports={stake.delegation.stake} />
               </td>
             </tr>
 
@@ -199,14 +199,14 @@ function DelegationCard({
                 <tr>
                   <td>Active Stake (NZT)</td>
                   <td className="text-lg-right">
-                    <SolBalance lamports={activation.active} />
+                    <NztBalance lamports={activation.active} />
                   </td>
                 </tr>
 
                 <tr>
                   <td>Inactive Stake (NZT)</td>
                   <td className="text-lg-right">
-                    <SolBalance lamports={activation.inactive} />
+                    <NztBalance lamports={activation.inactive} />
                   </td>
                 </tr>
               </>

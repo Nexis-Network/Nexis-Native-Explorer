@@ -22,7 +22,12 @@ ul.log-messages {
 }
 
 .navbar {
+  background-color: rgba(7, 9, 11, 0.2) !important;
+  backdrop-filter: blur(16px) !important;
+  -webkit-backdrop-filter: blur(16px) !important;
   border-bottom: 1px solid $card-outline-color;
+  width: 100% !important;
+
 }
 
 .search-bar__placeholder {
@@ -30,8 +35,11 @@ ul.log-messages {
 }
 
 .search-bar__control {
-  background-color: $gray-800-dark !important;
-  border-color: $card-outline-color !important;
+  background-color: rgba(12, 13, 14, 0.5) !important;
+  border: 1px solid #1F2124 !important;
+  border-radius: 8px !important;
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
   box-shadow: $card-box-shadow !important;
   min-height: 52px !important;
 
@@ -41,8 +49,11 @@ ul.log-messages {
 }
 
 .search-bar__menu {
-  background-color: $gray-800-dark !important;
-  border: 1px solid $card-outline-color !important;
+  background-color: rgba(12, 13, 14, 0.5) !important;
+  border: 1px solid #1F2124 !important;
+  border-radius: 8px !important;
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
   box-shadow: $card-box-shadow !important;
 
   .search-bar__option {
@@ -56,4 +67,26 @@ ul.log-messages {
       background-color: $gray-700-dark !important;
     }
   }
+}
+
+.card {
+  background-color: rgba(12, 13, 14, 0.5);
+  border: 1px solid #1F2124;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: 8px;
+}
+
+// Cluster select button override
+.btn-primary {
+  background-color: #DAFF75 !important;
+  border-color: #DAFF75 !important;
+  color: #07090B !important;
+  transform: scale(0.75) !important;
+  font-size: 12px !important;
+}
+
+// Navigation active link override
+.nav-link.active {
+  color: #DAFF75 !important;
 }

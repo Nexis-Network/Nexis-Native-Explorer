@@ -1,4 +1,4 @@
-import { SignatureResult, TransactionInstruction } from "@nexis/web3";
+import { SignatureResult, TransactionInstruction } from "@nexis-ai/web3";
 import { Address } from "components/common/Address";
 import { InstructionCard } from "../InstructionCard";
 

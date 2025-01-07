@@ -1,5 +1,5 @@
 import React from "react";
-import { PublicKey } from "@nexis/web3";
+import { PublicKey } from "@nexis-ai/web3";
 import { LoadingCard } from "components/common/LoadingCard";
 import { ErrorCard } from "components/common/ErrorCard";
 import { Address } from "components/common/Address";

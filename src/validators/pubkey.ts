@@ -1,5 +1,5 @@
 import { coerce, instance, string } from "superstruct";
-import { PublicKey } from "@nexis/web3";
+import { PublicKey } from "@nexis-ai/web3";
 
 export const PublicKeyFromString = coerce(
   instance(PublicKey),

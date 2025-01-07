@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { TransactionSignature } from "@nexis/web3";
+import { TransactionSignature } from "@nexis-ai/web3";
 import { clusterPath } from "utils/url";
 import { Copyable } from "./Copyable";
 

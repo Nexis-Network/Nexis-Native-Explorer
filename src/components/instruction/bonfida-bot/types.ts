@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-redeclare */
-import { PublicKey, TransactionInstruction } from "@nexis/web3";
+import { PublicKey, TransactionInstruction } from "@nexis-ai/web3";
 import {
   enums,
   number,

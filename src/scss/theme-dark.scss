@@ -5,17 +5,17 @@
  * to ensure cascade of styles.
  */
 
- // Icon font
+// Icon font
 @import "../fonts/feather/feather";
 
 // Bootstrap functions
 @import '~bootstrap/scss/functions.scss';
 
 // Custom variables
-@import 'solana-variables-dark';
+@import 'nexis-variables-dark';
 
 // Custom variables
-@import 'solana-variables';
+@import 'nexis-variables';
 
 // Dark mode variables
 @import 'dashkit/dark/variables-dark';
@@ -33,7 +33,7 @@
 @import 'dashkit/dark/overrides-dark';
 
 // Custom core
-@import 'solana';
+@import '_nexis';
 
 // Dark mode overrides
-@import 'solana-dark-overrides';
+@import 'nexis-dark-overrides';

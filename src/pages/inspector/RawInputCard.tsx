@@ -1,5 +1,5 @@
 import React from "react";
-import { Message } from "@nexis/web3";
+import { Message } from "@nexis-ai/web3";
 import type { TransactionData } from "./InspectorPage";
 import { useQuery } from "utils/url";
 import { useHistory, useLocation } from "react-router";
@@ -130,7 +130,7 @@ export function RawInput({
 
   const placeholder = "Paste raw base64 encoded transaction message";
   return (
-    <div className="card">
+    <div className="card mt-4">
       <div className="card-header">
         <h3 className="card-header-title">Encoded Transaction Message</h3>
       </div>

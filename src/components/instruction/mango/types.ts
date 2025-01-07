@@ -14,7 +14,7 @@ import {
   Connection,
   PublicKey,
   TransactionInstruction,
-} from "@nexis/web3";
+} from "@nexis-ai/web3";
 
 // note: mainnet.1 suffices since its a superset of mainnet.0
 const mangoGroups = Config.ids().groups.filter(

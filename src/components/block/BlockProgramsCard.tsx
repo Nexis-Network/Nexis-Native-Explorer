@@ -1,5 +1,5 @@
 import React from "react";
-import { BlockResponse, PublicKey } from "@nexis/web3";
+import { BlockResponse, PublicKey } from "@nexis-ai/web3";
 import { Address } from "components/common/Address";
 import { TableCardBody } from "components/common/TableCardBody";
 

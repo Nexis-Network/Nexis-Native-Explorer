@@ -1,14 +1,14 @@
 import React from "react";
 import { Cluster, useCluster } from "providers/cluster";
 import * as Cache from "providers/cache";
-import { Connection, InflationReward, PublicKey } from "@nexis/web3";
+import { Connection, InflationReward, PublicKey } from "@nexis-ai/web3";
 import { ActionType } from "providers/block";
 import { FetchStatus } from "providers/cache";
 import { reportError } from "utils/sentry";
 
 const REWARDS_AVAILABLE_EPOCH = new Map<Cluster, number>([
   [Cluster.MainnetBeta, 132],
-  [Cluster.Testnet, 43],
+  [Cluster.SparkTestnet, 10],
 ]);
 
 const PAGE_SIZE = 15;

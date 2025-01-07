@@ -1,27 +1,35 @@
-import { EpochInfo, PerfSample } from "@nexis/web3";
-import { ClusterStatsStatus } from "./solanaClusterStats";
+import { EpochInfo, PerfSample } from "@nexis-ai/web3";
+import { ClusterStatsStatus } from "./nexisClusterStats";
 
-export type DashboardInfo = {
+export enum DashboardInfoActionType {
+  Reset,
+  SetError,
+  SetEpochInfo,
+  SetLastBlockTime,
+  SetPerfSamples,
+  SetSupplyInfo,
+}
+
+export interface SupplyInfo {
+  totalSupply: number;
+  circulatingSupply: number;
+  nonCirculatingSupply: number;
+}
+
+export interface DashboardInfo {
   status: ClusterStatsStatus;
   avgSlotTime_1h: number;
   avgSlotTime_1min: number;
   epochInfo: EpochInfo;
   blockTime?: number;
   lastBlockTime?: BlockTimeInfo;
-};
+  supplyInfo?: SupplyInfo;
+}
 
 export type BlockTimeInfo = {
   blockTime: number;
   slot: number;
 };
-
-export enum DashboardInfoActionType {
-  SetPerfSamples,
-  SetEpochInfo,
-  SetLastBlockTime,
-  SetError,
-  Reset,
-}
 
 export type DashboardInfoActionSetPerfSamples = {
   type: DashboardInfoActionType.SetPerfSamples;
@@ -48,12 +56,18 @@ export type DashboardInfoActionSetLastBlockTime = {
   data: BlockTimeInfo;
 };
 
+export type DashboardInfoActionSetSupplyInfo = {
+  type: DashboardInfoActionType.SetSupplyInfo;
+  data: SupplyInfo;
+};
+
 export type DashboardInfoAction =
   | DashboardInfoActionSetPerfSamples
   | DashboardInfoActionSetEpochInfo
   | DashboardInfoActionReset
   | DashboardInfoActionSetError
-  | DashboardInfoActionSetLastBlockTime;
+  | DashboardInfoActionSetLastBlockTime
+  | DashboardInfoActionSetSupplyInfo;
 
 export function dashboardInfoReducer(
   state: DashboardInfo,
@@ -140,6 +154,16 @@ export function dashboardInfoReducer(
       return {
         ...action.data,
       };
+
+    case DashboardInfoActionType.SetSupplyInfo: {
+      if (state.status === ClusterStatsStatus.Error) return state;
+      const supplyInfo = action.data as SupplyInfo;
+      return {
+        ...state,
+        status: ClusterStatsStatus.Ready,
+        supplyInfo,
+      };
+    }
 
     default:
       return state;

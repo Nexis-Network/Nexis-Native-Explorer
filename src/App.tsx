@@ -1,5 +1,7 @@
 import React from "react";
-import { Switch, Route, Redirect } from "react-router-dom";
+import { Switch, Route, Redirect, RouteComponentProps } from "react-router-dom";
+import { CssVarsProvider } from '@mui/joy/styles';
+import { theme } from './theme/mui-config';
 
 import { ClusterModal } from "components/ClusterModal";
 import { MessageBanner } from "components/MessageBanner";
@@ -17,9 +19,23 @@ import { BlockDetailsPage } from "pages/BlockDetailsPage";
 const ADDRESS_ALIASES = ["account", "accounts", "addresses"];
 const TX_ALIASES = ["txs", "txn", "txns", "transaction", "transactions"];
 
+interface SignatureParams {
+  signature?: string;
+}
+
+interface BlockParams {
+  id: string;
+  tab?: string;
+}
+
+interface AddressParams {
+  address: string;
+  tab?: string;
+}
+
 function App() {
   return (
-    <>
+    <CssVarsProvider theme={theme} defaultMode="dark">
       <ClusterModal />
       <div className="main-content pb-4">
         <Navbar />
@@ -41,22 +57,22 @@ function App() {
           <Route
             exact
             path={["/tx/inspector", "/tx/:signature/inspect"]}
-            render={({ match }) => (
-              <TransactionInspectorPage signature={match.params.signature} />
+            render={({ match }: RouteComponentProps<SignatureParams>) => (
+              <TransactionInspectorPage signature={match.params.signature || ''} />
             )}
           />
           <Route
             exact
             path={"/tx/:signature"}
-            render={({ match }) => (
-              <TransactionDetailsPage signature={match.params.signature} />
+            render={({ match }: RouteComponentProps<SignatureParams>) => (
+              <TransactionDetailsPage signature={match.params.signature || ''} />
             )}
           />
           <Route
             exact
             path={["/block/:id", "/block/:id/:tab"]}
-            render={({ match }) => (
-              <BlockDetailsPage slot={match.params.id} tab={match.params.tab} />
+            render={({ match }: RouteComponentProps<BlockParams>) => (
+              <BlockDetailsPage slot={match.params.id} tab={match.params.tab || ''} />
             )}
           />
           <Route
@@ -76,10 +92,10 @@ function App() {
           <Route
             exact
             path={["/address/:address", "/address/:address/:tab"]}
-            render={({ match }) => (
+            render={({ match }: RouteComponentProps<AddressParams>) => (
               <AccountDetailsPage
                 address={match.params.address}
-                tab={match.params.tab}
+                tab={match.params.tab || ''}
               />
             )}
           />
@@ -93,7 +109,7 @@ function App() {
           />
         </Switch>
       </div>
-    </>
+    </CssVarsProvider>
   );
 }
 

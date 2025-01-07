@@ -3,7 +3,7 @@ import {
   TransactionInstruction,
   SignatureResult,
   ParsedInstruction,
-} from "@nexis/web3";
+} from "@nexis-ai/web3";
 import { InstructionCard } from "./InstructionCard";
 
 export function UnknownDetailsCard({

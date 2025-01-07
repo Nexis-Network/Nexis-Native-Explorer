@@ -7,7 +7,7 @@ import {
   Connection,
   TokenAccountBalancePair,
   ParsedAccountData,
-} from "@nexis/web3";
+} from "@nexis-ai/web3";
 import { TokenAccountInfo, TokenAccount } from "validators/accounts/token";
 import { ParsedInfo } from "validators";
 import { create } from "superstruct";

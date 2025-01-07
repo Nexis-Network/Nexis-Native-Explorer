@@ -1,6 +1,6 @@
 import React from "react";
 import bs58 from "bs58";
-import { Connection, Message, Transaction } from "@nexis/web3";
+import { Connection, Message, Transaction } from "@nexis-ai/web3";
 import { useCluster } from "providers/cluster";
 import { TableCardBody } from "components/common/TableCardBody";
 import { programLabel } from "utils/tx";

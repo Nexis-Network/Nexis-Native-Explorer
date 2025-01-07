@@ -1,4 +1,4 @@
-import { SignatureResult, TransactionInstruction } from "@nexis/web3";
+import { SignatureResult, TransactionInstruction } from "@nexis-ai/web3";
 import BN from "bn.js";
 import { Address } from "components/common/Address";
 import { useCluster } from "providers/cluster";

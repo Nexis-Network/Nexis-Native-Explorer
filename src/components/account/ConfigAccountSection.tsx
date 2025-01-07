@@ -11,7 +11,7 @@ import {
   AccountBalanceRow,
   AccountHeader,
 } from "components/common/Account";
-import { PublicKey } from "@nexis/web3";
+import { PublicKey } from "@nexis-ai/web3";
 import { Address } from "components/common/Address";
 
 const MAX_SLASH_PENALTY = Math.pow(2, 8);

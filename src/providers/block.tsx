@@ -1,7 +1,7 @@
 import React from "react";
 import * as Sentry from "@sentry/react";
 import * as Cache from "providers/cache";
-import { Connection, BlockResponse } from "@nexis/web3";
+import { Connection, BlockResponse } from "@nexis-ai/web3";
 import { useCluster, Cluster } from "./cluster";
 
 export enum FetchStatus {

@@ -4,7 +4,7 @@ import {
   ParsedInstruction,
   ParsedTransaction,
   BPF_LOADER_PROGRAM_ID,
-} from "@nexis/web3";
+} from "@nexis-ai/web3";
 import { InstructionCard } from "../InstructionCard";
 import { create } from "superstruct";
 import { ParsedInfo } from "validators";

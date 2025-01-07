@@ -5,7 +5,7 @@ import {
   ParsedTransaction,
   PublicKey,
   ParsedInstruction,
-} from "@nexis/web3";
+} from "@nexis-ai/web3";
 
 import { UnknownDetailsCard } from "../UnknownDetailsCard";
 import { InstructionCard } from "../InstructionCard";

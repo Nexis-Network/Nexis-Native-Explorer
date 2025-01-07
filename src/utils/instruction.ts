@@ -10,7 +10,7 @@ import {
   ParsedConfirmedTransaction,
   ParsedInstruction,
   PartiallyDecodedInstruction,
-} from "@nexis/web3";
+} from "@nexis-ai/web3";
 import { intoTransactionInstruction } from "utils/tx";
 import {
   isTokenSwapInstruction,

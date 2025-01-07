@@ -1,8 +1,8 @@
 import React from "react";
-import { Message, PACKET_DATA_SIZE } from "@nexis/web3";
+import { Message, PACKET_DATA_SIZE } from "@nexis-ai/web3";
 
 import { TableCardBody } from "components/common/TableCardBody";
-import { SolBalance } from "utils";
+import { NztBalance } from "utils";
 import { useQuery } from "utils/url";
 import { useHistory, useLocation } from "react-router";
 import {
@@ -197,11 +197,9 @@ export function TransactionInspectorPage({
 
   return (
     <div className="container mt-4">
-      <div className="header">
-        <div className="header-body">
+           <div className="header-body">
           <h2 className="header-title">Transaction Inspector</h2>
         </div>
-      </div>
       {signature ? (
         <PermalinkView signature={signature} reset={reset} />
       ) : transaction ? (
@@ -336,7 +334,7 @@ function OverviewCard({
             <td>Fees</td>
             <td className="text-lg-right">
               <div className="d-flex align-items-end flex-column">
-                <SolBalance lamports={fee} />
+                <NztBalance lamports={fee} />
                 <span className="text-muted">
                   {`Each signature costs ${DEFAULT_FEES.lamportsPerSignature} lamports`}
                 </span>

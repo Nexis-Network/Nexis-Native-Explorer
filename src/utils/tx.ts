@@ -15,7 +15,7 @@ import {
   PartiallyDecodedInstruction,
   ParsedInstruction,
   Secp256k1Program,
-} from "@nexis/web3";
+} from "@nexis-ai/web3";
 import { Cluster } from "providers/cluster";
 import { SerumMarketRegistry } from "serumMarketRegistry";
 import { TokenInfoMap } from "@solana/spl-token-registry";
@@ -43,7 +43,7 @@ export enum PROGRAM_NAMES {
   // other
   WORMHOLE = "Wormhole",
   BONFIDA_POOL = "Bonfida Pool Program",
-  BREAK_SOLANA = "Break Solana Program",
+  BREAK_NZTANA = "Break Solana Program",
   RAYDIUM_LIQUIDITY_1 = "Raydium Liquidity Pool Program v1",
   RAYDIUM_LIQUIDITY_2 = "Raydium Liquidity Pool Program v2",
   RAYDIUM_STAKING = "Raydium Staking Program",
@@ -55,12 +55,14 @@ export enum PROGRAM_NAMES {
 
 const ALL_CLUSTERS = [
   Cluster.Custom,
-  Cluster.Devnet,
-  Cluster.Testnet,
+  Cluster.SparkTestnet,
   Cluster.MainnetBeta,
 ];
 
-const LIVE_CLUSTERS = [Cluster.Devnet, Cluster.Testnet, Cluster.MainnetBeta];
+const LIVE_CLUSTERS = [
+  Cluster.SparkTestnet,
+  Cluster.MainnetBeta,
+];
 
 const MAINNET_ONLY = [Cluster.MainnetBeta];
 
@@ -84,7 +86,7 @@ export const PROGRAM_DEPLOYMENTS = {
   // other
   [PROGRAM_NAMES.WORMHOLE]: MAINNET_ONLY,
   [PROGRAM_NAMES.BONFIDA_POOL]: MAINNET_ONLY,
-  [PROGRAM_NAMES.BREAK_SOLANA]: LIVE_CLUSTERS,
+  [PROGRAM_NAMES.BREAK_NZTANA]: LIVE_CLUSTERS,
   [PROGRAM_NAMES.RAYDIUM_LIQUIDITY_1]: MAINNET_ONLY,
   [PROGRAM_NAMES.RAYDIUM_LIQUIDITY_2]: MAINNET_ONLY,
   [PROGRAM_NAMES.RAYDIUM_STAKING]: MAINNET_ONLY,
@@ -114,7 +116,7 @@ export const PROGRAM_NAME_BY_ID = {
   // other
   WormT3McKhFJ2RkiGpdw9GKvNCrB2aB54gb2uV9MfQC: PROGRAM_NAMES.WORMHOLE,
   WvmTNLpGMVbwJVYztYL4Hnsy82cJhQorxjnnXcRm3b6: PROGRAM_NAMES.BONFIDA_POOL,
-  BrEAK7zGZ6dM71zUDACDqJnekihmwF15noTddWTsknjC: PROGRAM_NAMES.BREAK_SOLANA,
+  BrEAK7zGZ6dM71zUDACDqJnekihmwF15noTddWTsknjC: PROGRAM_NAMES.BREAK_NZTANA,
   RVKd61ztZW9GUwhRbbLoYVRE5Xf1B2tVscKqwZqXgEr:
     PROGRAM_NAMES.RAYDIUM_LIQUIDITY_1,
   "27haf8L6oxUeXrHrgEgsexjSY5hbVUWEmvv9Nyxg8vQv":

@@ -12,7 +12,10 @@
 @import '~bootstrap/scss/functions.scss';
 
 // Custom variables
-@import 'solana-variables';
+@import 'nexis-variables';
+
+// Global styles
+@import 'global';
 
 // Dashkit variables
 @import 'dashkit/variables';
@@ -24,4 +27,16 @@
 @import 'dashkit/dashkit';
 
 // Custom core
-@import 'solana';
+@import 'nexis';
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;400;500;600;700&display=swap');
+
+body {
+  font-family: 'Roboto Mono', monospace;
+}
+
+.nav-link,
+.navbar-nav,
+.nav-item {
+  font-family: 'Roboto Mono', monospace;
+}

@@ -1,5 +1,5 @@
 import React from "react";
-import { ParsedInstruction, PublicKey, SignatureResult } from "@nexis/web3";
+import { ParsedInstruction, PublicKey, SignatureResult } from "@nexis-ai/web3";
 import { InstructionCard } from "./InstructionCard";
 import { Address } from "components/common/Address";
 

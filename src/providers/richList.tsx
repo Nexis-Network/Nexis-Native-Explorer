@@ -1,6 +1,6 @@
 import React from "react";
 
-import { AccountBalancePair, Connection } from "@nexis/web3";
+import { AccountBalancePair, Connection } from "@nexis-ai/web3";
 import { useCluster, ClusterStatus, Cluster } from "./cluster";
 import { reportError } from "utils/sentry";
 

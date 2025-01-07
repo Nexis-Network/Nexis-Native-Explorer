@@ -1,5 +1,5 @@
 import React from "react";
-import { Connection } from "@nexis/web3";
+import { Connection } from "@nexis-ai/web3";
 import { useQuery } from "../utils/url";
 import { useHistory, useLocation } from "react-router-dom";
 import { reportError } from "utils/sentry";
@@ -9,12 +9,10 @@ export function clusterApiUrl(cluster: string): string {
   switch (cluster) {
     case "mainnet-beta":
       return "https://api.mainnet.nexis.network/";
-    case "testnet":
-      return "https://api.testnet.nexis.network/";
-    case "devnet":
-      return "https://api.devnet.nexis.network/";
+    case "spark-testnet":
+      return "http://api.spark.nexis.network:8899/";
     default:
-      return "https://api.testnet.nexis.network/";
+      return "https://api.mainnet.nexis.network/";
   }
 }
 
@@ -26,15 +24,13 @@ export enum ClusterStatus {
 
 export enum Cluster {
   MainnetBeta,
-  Testnet,
-  Devnet,
+  SparkTestnet,
   Custom,
 }
 
 export const CLUSTERS = [
   Cluster.MainnetBeta,
-  Cluster.Testnet,
-  Cluster.Devnet,
+  Cluster.SparkTestnet,
   Cluster.Custom,
 ];
 
@@ -42,10 +38,8 @@ export function clusterSlug(cluster: Cluster): string {
   switch (cluster) {
     case Cluster.MainnetBeta:
       return "mainnet-beta";
-    case Cluster.Testnet:
-      return "testnet";
-    case Cluster.Devnet:
-      return "devnet";
+    case Cluster.SparkTestnet:
+      return "spark-testnet";
     case Cluster.Custom:
       return "custom";
   }
@@ -55,27 +49,22 @@ export function clusterName(cluster: Cluster): string {
   switch (cluster) {
     case Cluster.MainnetBeta:
       return "Mainnet";
-    case Cluster.Testnet:
-      return "Testnet";
-    case Cluster.Devnet:
-      return "Devnet";
+    case Cluster.SparkTestnet:
+      return "Spark Testnet";
     case Cluster.Custom:
       return "Custom";
   }
 }
 
 export const MAINNET_BETA_URL = clusterApiUrl("mainnet-beta");
-export const TESTNET_URL = clusterApiUrl("testnet");
-export const DEVNET_URL = clusterApiUrl("devnet");
+export const SPARK_TESTNET_URL = clusterApiUrl("spark-testnet");
 
 export function clusterUrl(cluster: Cluster, customUrl: string): string {
   switch (cluster) {
-    case Cluster.Devnet:
-      return DEVNET_URL;
     case Cluster.MainnetBeta:
       return MAINNET_BETA_URL;
-    case Cluster.Testnet:
-      return TESTNET_URL;
+    case Cluster.SparkTestnet:
+      return SPARK_TESTNET_URL;
     case Cluster.Custom:
       return customUrl;
   }
@@ -121,10 +110,8 @@ function parseQuery(query: URLSearchParams): Cluster {
   switch (clusterParam) {
     case "custom":
       return Cluster.Custom;
-    case "devnet":
-      return Cluster.Devnet;
-    case "testnet":
-      return Cluster.Testnet;
+    case "spark-testnet":
+      return Cluster.SparkTestnet;
     case "mainnet-beta":
     default:
       return Cluster.MainnetBeta;

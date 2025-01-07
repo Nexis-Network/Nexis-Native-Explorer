@@ -1,4 +1,4 @@
-import { SignatureResult, TransactionInstruction } from "@nexis/web3";
+import { SignatureResult, TransactionInstruction } from "@nexis-ai/web3";
 import { useCluster } from "providers/cluster";
 import { reportError } from "utils/sentry";
 import { InstructionCard } from "./InstructionCard";

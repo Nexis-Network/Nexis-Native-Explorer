@@ -1,6 +1,6 @@
 import React from "react";
-import { SolBalance } from "utils";
-import { BlockResponse, PublicKey } from "@nexis/web3";
+import { NztBalance } from "utils";
+import { BlockResponse, PublicKey } from "@nexis-ai/web3";
 import { Address } from "components/common/Address";
 
 const PAGE_SIZE = 10;
@@ -50,11 +50,11 @@ export function BlockRewardsCard({ block }: { block: BlockResponse }) {
                   </td>
                   <td>{reward.rewardType}</td>
                   <td>
-                    <SolBalance lamports={reward.lamports} />
+                    <NztBalance lamports={reward.lamports} />
                   </td>
                   <td>
                     {reward.postBalance ? (
-                      <SolBalance lamports={reward.postBalance} />
+                      <NztBalance lamports={reward.postBalance} />
                     ) : (
                       "-"
                     )}

@@ -33,38 +33,48 @@ function Button() {
   const statusName = cluster !== Cluster.Custom ? `${name}` : `${customUrl}`;
 
   const btnClasses = (variant: string) => {
-    return `btn d-block btn-${variant}`;
+    return `btn d-block btn-${variant} cluster-button-wrapper`;
   };
 
   const spinnerClasses = "spinner-grow spinner-grow-sm mr-2";
 
-  switch (status) {
-    case ClusterStatus.Connected:
-      return (
-        <span className={btnClasses("primary")}>
-          <span className="fe fe-check-circle mr-2"></span>
-          {statusName}
-        </span>
-      );
+  const renderContent = () => {
+    switch (status) {
+      case ClusterStatus.Connected:
+        return (
+          <>
+            <span className="fe fe-check-circle mr-2"></span>
+            {statusName}
+          </>
+        );
 
-    case ClusterStatus.Connecting:
-      return (
-        <span className={btnClasses("primary")}>
-          <span
-            className={spinnerClasses}
-            role="status"
-            aria-hidden="true"
-          ></span>
-          {statusName}
-        </span>
-      );
+      case ClusterStatus.Connecting:
+        return (
+          <>
+            <span
+              className={spinnerClasses}
+              role="status"
+              aria-hidden="true"
+            ></span>
+            {statusName}
+          </>
+        );
 
-    case ClusterStatus.Failure:
-      return (
-        <span className={btnClasses("danger")}>
-          <span className="fe fe-alert-circle mr-2"></span>
-          {statusName}
-        </span>
-      );
-  }
+      case ClusterStatus.Failure:
+        return (
+          <>
+            <span className="fe fe-alert-circle mr-2"></span>
+            {statusName}
+          </>
+        );
+    }
+  };
+
+  return (
+    <div className="cluster-button-container">
+      <span className={btnClasses("primary")}>
+        {renderContent()}
+      </span>
+    </div>
+  );
 }

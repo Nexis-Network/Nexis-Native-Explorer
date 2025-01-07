@@ -4,7 +4,7 @@ import {
   ConfirmedSignatureInfo,
   ParsedInstruction,
   PartiallyDecodedInstruction,
-} from "@nexis/web3";
+} from "@nexis-ai/web3";
 import { CacheEntry, FetchStatus } from "providers/cache";
 import {
   useAccountHistories,

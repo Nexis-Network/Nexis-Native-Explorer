@@ -1,24 +1,25 @@
 //
-// solana-variables.scss
+// nexis-variables.scss
 // Use this to overwrite Bootstrap and Dashkit variables
 //
 
 // Example of a variable override to change Dashkit's background color
 // Remove the "//" to comment it in and see it in action!
-$body-bg: #161b19 !default;
+$body-bg: #07090B !default;
+
 
 $black: #232323;
 $white: #fff !default;
-$gray-600: #86b8b6;
+$gray-600: #eee;
 $gray-600-dark: #343a37 !default;
 $gray-700-dark: #282d2b !default;
 $gray-800-dark: #1e2423 !default;
 $black-dark: #141816 !default;
 $input-placeholder-color: #ccc !default;
 
-$primary: #1dd79b !default;
-$success: #26e97e !default;
-$warning: #fa62fc !default;
+$primary: #DAFF75  !default;
+$success: #DAFF75 !default;
+$warning: #DAFF75 !default;
 $card-border-color: $gray-700-dark !default;
 $card-outline-color: #111 !default;
 

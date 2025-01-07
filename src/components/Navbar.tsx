@@ -12,7 +12,7 @@ export function Navbar() {
     <nav className="navbar navbar-expand-md navbar-light">
       <div className="container">
         <Link to={clusterPath("/")}>
-          <img src={Logo} height="50" alt="Nexis Native Explorer" />
+          <img src={Logo} height="10" alt="Nexis Network Native Explorer" />
         </Link>
 
         <button
@@ -30,17 +30,17 @@ export function Navbar() {
           <ul className="navbar-nav mr-auto tabs">
             <li className="nav-item">
               <NavLink className="nav-link" to={clusterPath("/")} exact>
-                Cluster Stats
+                CLUSTERS
               </NavLink>
             </li>
             <li className="nav-item">
               <NavLink className="nav-link" to={clusterPath("/supply")}>
-                Supply
+                SUPPLY
               </NavLink>
             </li>
             <li className="nav-item">
               <NavLink className="nav-link" to={clusterPath("/tx/inspector")}>
-                Inspector
+                INSPECTOR
               </NavLink>
             </li>
             {/*
@@ -57,7 +57,7 @@ export function Navbar() {
             */}
             <li className="nav-item">
               <a className="nav-link url-link" href="https://evm.nexscan.io/" target="_blank" rel="noreferrer">
-                EVM Explorer
+                EXPLORERS
               </a>
             </li>
           </ul>

@@ -4,7 +4,7 @@ import {
   Connection,
   SignatureResult,
   TransactionConfirmationStatus,
-} from "@nexis/web3";
+} from "@nexis-ai/web3";
 import { useCluster, Cluster } from "../cluster";
 import { DetailsProvider } from "./parsed";
 import { RawDetailsProvider } from "./raw";

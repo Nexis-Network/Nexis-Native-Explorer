@@ -3,8 +3,8 @@ import {
   SystemProgram,
   SignatureResult,
   ParsedInstruction,
-} from "@nexis/web3";
-import { SolBalance } from "utils";
+} from "@nexis-ai/web3";
+import { NztBalance } from "utils";
 import { InstructionCard } from "../InstructionCard";
 import { Copyable } from "components/common/Copyable";
 import { Address } from "components/common/Address";
@@ -69,7 +69,7 @@ export function CreateWithSeedDetailsCard(props: {
       <tr>
         <td>Transfer Amount (NZT)</td>
         <td className="text-lg-right">
-          <SolBalance lamports={info.lamports} />
+          <NztBalance lamports={info.lamports} />
         </td>
       </tr>
 

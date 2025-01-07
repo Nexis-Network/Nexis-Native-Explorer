@@ -2,7 +2,7 @@ import React from "react";
 import { useSupply, useFetchSupply, Status } from "providers/supply";
 import { LoadingCard } from "./common/LoadingCard";
 import { ErrorCard } from "./common/ErrorCard";
-import { SolBalance } from "utils";
+import { NztBalance } from "utils";
 import { TableCardBody } from "./common/TableCardBody";
 
 export function SupplyCard() {
@@ -33,14 +33,14 @@ export function SupplyCard() {
         <tr>
           <td className="w-100">Total Supply (NZT)</td>
           <td className="text-lg-right">
-            <SolBalance lamports={supply.total} maximumFractionDigits={0} />
+            <NztBalance lamports={supply.total} maximumFractionDigits={0} />
           </td>
         </tr>
 
         <tr>
           <td className="w-100">Circulating Supply (NZT)</td>
           <td className="text-lg-right">
-            <SolBalance
+            <NztBalance
               lamports={supply.circulating}
               maximumFractionDigits={0}
             />
@@ -50,7 +50,7 @@ export function SupplyCard() {
         <tr>
           <td className="w-100">Non-Circulating Supply (NZT)</td>
           <td className="text-lg-right">
-            <SolBalance
+            <NztBalance
               lamports={supply.nonCirculating}
               maximumFractionDigits={0}
             />

@@ -1,4 +1,4 @@
-import { TransactionInstruction } from "@nexis/web3";
+import { TransactionInstruction } from "@nexis-ai/web3";
 
 export const PROGRAM_IDS: string[] = [
   "LendZqTs7gn5CTSJU1jWKhKuVpjJGom45nnwPb2AMTi", // mainnet / testnet / devnet

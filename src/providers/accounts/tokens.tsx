@@ -1,5 +1,5 @@
 import React from "react";
-import { Connection, PublicKey } from "@nexis/web3";
+import { Connection, PublicKey } from "@nexis-ai/web3";
 import * as Cache from "providers/cache";
 import { ActionType, FetchStatus } from "providers/cache";
 import { TokenAccountInfo } from "validators/accounts/token";

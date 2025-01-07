@@ -1,5 +1,5 @@
-import { PerfSample } from "@nexis/web3";
-import { ClusterStatsStatus } from "./solanaClusterStats";
+import { PerfSample } from "@nexis-ai/web3";
+import { ClusterStatsStatus } from "./nexisClusterStats";
 
 export type PerformanceInfo = {
   status: ClusterStatsStatus;

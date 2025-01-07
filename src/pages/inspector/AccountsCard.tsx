@@ -1,5 +1,5 @@
 import React from "react";
-import { Message, PublicKey } from "@nexis/web3";
+import { Message, PublicKey } from "@nexis-ai/web3";
 import { TableCardBody } from "components/common/TableCardBody";
 import { AddressWithContext } from "./AddressWithContext";
 import { ErrorCard } from "components/common/ErrorCard";

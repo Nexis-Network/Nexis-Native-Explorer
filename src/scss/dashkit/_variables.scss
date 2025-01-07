@@ -44,7 +44,7 @@ $pink: #ff679b !default; // NOT USED
 $red: #E63757 !default;
 $orange: #fd7e14 !default; // NOT USED
 $yellow: #F6C343 !default;
-$green: #00D97E !default;
+$green: #B4FF33 !default;
 $teal: #02a8b5 !default; // NOT USED
 $cyan: #39afd1 !default; // NOT USED
 
@@ -668,14 +668,14 @@ $modal-card-body-max-height: 350px !default;
 
 // Navs
 
-$nav-link-padding-y: .5rem !default;
+$nav-link-padding-y: 0.25rem !default;
 $nav-link-padding-x: 1rem !default;
 
 $nav-tabs-link-active-border-width: 1px !default;
 $nav-tabs-link-margin-x: .75rem !default; // Margin used for X so active underline matches width of label
-$nav-tabs-link-padding-y: $card-spacer-y !default; // This keeps the height the same as the card header
+$nav-tabs-link-padding-y: 0.25rem !default; // This keeps the height the same as the card header
 
-$nav-tabs-sm-font-size: .8125rem !default;
+$nav-tabs-sm-font-size: .6125rem !default;
 $nav-tabs-sm-link-margin-x: .5rem !default;
 
 

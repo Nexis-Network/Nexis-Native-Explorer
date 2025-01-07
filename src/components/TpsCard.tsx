@@ -5,11 +5,11 @@ import {
   usePerformanceInfo,
   PERF_UPDATE_SEC,
   ClusterStatsStatus,
-} from "providers/stats/solanaClusterStats";
+} from "providers/stats/nexisClusterStats";
 import classNames from "classnames";
 import { TableCardBody } from "components/common/TableCardBody";
 import { ChartOptions, ChartTooltipModel } from "chart.js";
-import { PerformanceInfo } from "providers/stats/solanaPerformanceInfo";
+import { PerformanceInfo } from "providers/stats/nexisPerformanceInfo";
 import { StatsNotReady } from "pages/ClusterStatsPage";
 
 export function TpsCard() {

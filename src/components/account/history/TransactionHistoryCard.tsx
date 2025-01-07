@@ -2,7 +2,7 @@ import React from "react";
 import { Signature } from "components/common/Signature";
 import { Slot } from "components/common/Slot";
 import Moment from "react-moment";
-import { PublicKey } from "@nexis/web3";
+import { PublicKey } from "@nexis-ai/web3";
 import {
   useAccountHistory,
   useFetchAccountHistory,

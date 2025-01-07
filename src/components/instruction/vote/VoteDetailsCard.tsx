@@ -1,5 +1,5 @@
 import React from "react";
-import { PublicKey } from "@nexis/web3";
+import { PublicKey } from "@nexis-ai/web3";
 import { create, Struct } from "superstruct";
 import { ParsedInfo } from "validators";
 import {
@@ -56,7 +56,7 @@ export function VoteDetailsCard(props: InstructionDetailsProps) {
   return <UnknownDetailsCard {...props} />;
 }
 
-function renderDetails<T>(
+function renderDetails<T extends Record<string, any>>(
   props: InstructionDetailsProps,
   parsed: ParsedInfo,
   struct: Struct<T>
@@ -64,7 +64,7 @@ function renderDetails<T>(
   const info = create(parsed.info, struct);
   const attributes: JSX.Element[] = [];
 
-  for (let [key, value] of Object.entries(info)) {
+  for (let [key, value] of Object.entries(info as Record<string, any>)) {
     if (value instanceof PublicKey) {
       value = <Address pubkey={value} alignRight link />;
     }

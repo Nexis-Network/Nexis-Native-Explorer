@@ -1,5 +1,5 @@
 import React from "react";
-import { ConfirmedSignatureInfo } from "@nexis/web3";
+import { ConfirmedSignatureInfo } from "@nexis-ai/web3";
 import {
   getTokenProgramInstructionName,
   InstructionType,
